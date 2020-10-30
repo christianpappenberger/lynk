@@ -29,6 +29,7 @@ class App_Redirect extends Component {
 
   render() {
     return (
+        <React.Fragment>
       <MetaTags>
         {/* <title>{this.state.title}</title>
             <meta property="og:title" content={this.state.title} />
@@ -62,6 +63,9 @@ class App_Redirect extends Component {
           content="https://www.sueddeutsche.de/politik/corona-regeln-klagen-1.5098887"
         />
       </MetaTags>
+        <p>Sie werden weitergeleitet zu. Bitte haben Sie Geduld.</p>
+      </React.Fragment>
+
     );
   }
 }
