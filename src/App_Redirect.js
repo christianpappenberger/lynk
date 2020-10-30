@@ -29,43 +29,23 @@ class App_Redirect extends Component {
 
   render() {
     return (
-        <React.Fragment>
-      <MetaTags>
-        {/* <title>{this.state.title}</title>
-            <meta property="og:title" content={this.state.title} />
-            <meta property="og:image" content={this.state.image_url} />
-            <meta property="og:description" content="Beschreibung Test Tes t123" />
-            <meta property="og:url" content={this.state.redirect_url} />
-            <meta property="og:type" content="article" />
-        
-            { this.state.redirect_url !== null && <h1>Test</h1>
-               //<meta http-equiv="refresh" content = {"0;url="+this.state.redirect_url} />
-            } */}
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Süddeutsche.de" />
-        <meta property="og:locale" content="de_DE" />
-        <meta
-          property="og:title"
-          content="Corona-Regeln - Es drohen viele Klagen"
-        />
-        <meta
-          property="og:description"
-          content="Die neuen Beschlüsse zur Pandemie-Eindämmung könnten eine Welle von Klagen auslösen. Die Erfolgschancen sind kaum zu prognostizieren."
-        />
-        <meta
-          property="og:image"
-          content="https://www.sueddeutsche.de/image/sz.1.5098888/1200x675?v=1604067234"
-        />
-        <meta property="og:image:height" content="675" />
-        <meta property="og:image:width" content="1200" />
-        <meta
-          property="og:url"
-          content="https://www.sueddeutsche.de/politik/corona-regeln-klagen-1.5098887"
-        />
-      </MetaTags>
+      <React.Fragment>
+        <MetaTags>
+          <title>{this.state.title}</title>
+          <meta property="og:title" content={this.state.title} />
+          <meta property="og:image" content={this.state.image_url} />
+          <meta property="og:image:secure_url" content={this.state.image_url} />
+          <meta property="og:description" content="Beschreibung Test Tes t123"/>
+          <meta property="og:url" content="https://master.dpejypfy0z96y.amplifyapp.com/" />
+          <meta property="og:type" content="article" />
+
+          {
+            this.state.redirect_url !== null && <h1>Test</h1>
+            //<meta http-equiv="refresh" content = {"0;url="+this.state.redirect_url} />
+          }
+        </MetaTags>
         <p>Sie werden weitergeleitet zu. Bitte haben Sie Geduld.</p>
       </React.Fragment>
-
     );
   }
 }
