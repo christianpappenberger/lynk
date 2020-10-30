@@ -31,8 +31,8 @@ class App_Redirect extends Component {
             <title>{this.state.title}</title>
             <meta property="og:title" content={this.state.title} />
             <meta property="og:image" content={this.state.image_url} />
-            { this.state.redirect_url !== null && <p></p>
-               // <meta http-equiv="refresh" content = {"0;url="+this.state.redirect_url} />
+            { this.state.redirect_url !== null &&
+               <meta http-equiv="refresh" content = {"0;url="+this.state.redirect_url} />
             }
           </MetaTags>
     );
