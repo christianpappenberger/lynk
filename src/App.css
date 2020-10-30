@@ -1,0 +1,54 @@
+p.title {
+  font-size: 7.5rem;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  margin-top: 7%;
+  padding: 5%;
+  background-color: #fff;
+  letter-spacing: 10px;
+  --color1: #fff;
+  --color2: rgb(200,200,200);
+  background: repeating-linear-gradient(
+    60deg,
+    var(--color1),
+    var(--color1) 30px,
+    var(--color2) 30px,
+    var(--color2) 60px
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: 60s linear 0s infinite move;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-color: black; 
+  text-align: center;
+}
+
+p {
+  color: rgb(200,200,200);
+  padding: 1rem 0;
+}
+
+form label {
+  color:#fff;
+}
+
+.footer {
+  margin-top: 2%;
+  line-height: 60px;
+  color: rgb(150,150,150);
+  width:100%;
+}
+
+@keyframes move {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 1000px;
+  }
+}
