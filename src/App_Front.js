@@ -4,7 +4,7 @@ import "./App.css";
 import logo from "./adweko_logo_produkts.svg";
 import axios from "axios";
 
-const BASE_URL = "localhost:3000/";
+const BASE_URL = "https://master.dpejypfy0z96y.amplifyapp.com/";
 const UPLOAD_URL_CLOUDINARY =
   "https://api.cloudinary.com/v1_1/dewipehxt/upload";
 const UPLOAD_URL_JSONBOX = "https://jsonbox.io/box_13933b959897187a4c39";
