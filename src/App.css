@@ -3,7 +3,7 @@ p.title {
   font-family: 'Pacifico', cursive;
   text-align: center;
   margin-top: 7%;
-  padding: 5%;
+  padding: 3%;
   background-color: #fff;
   letter-spacing: 10px;
   --color1: #fff;
@@ -30,7 +30,7 @@ body {
 
 p {
   color: rgb(200,200,200);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 form label {
