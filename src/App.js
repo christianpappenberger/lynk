@@ -4,7 +4,7 @@ import "./App.css";
 import axios from "axios";
 import { MetaTags } from "react-meta-tags";
 
-const BASE_URL = "https://master.dpejypfy0z96y.amplifyapp.com/";
+const BASE_URL = "https://lynk-app.herokuapp.com/";
 const UPLOAD_URL_CLOUDINARY =
   "https://api.cloudinary.com/v1_1/dewipehxt/upload";
 const UPLOAD_URL_JSONBOX = "https://jsonbox.io/box_13933b959897187a4c39";
