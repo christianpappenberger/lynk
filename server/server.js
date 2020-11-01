@@ -34,11 +34,6 @@ app.get("/redirect/:id", async (req, res) => {
         return res.status(500).send("Fehler!");
       }
 
-      data = data.replace(
-        '<div id="root"></div>',
-        '<div id="root"><p>hi</p></div>'
-      );
-
       data = data.replace(/\$OG_TITLE/g, "...");
       data = data.replace(
         /\$META_DESCRIPTION/g,
@@ -50,7 +45,7 @@ app.get("/redirect/:id", async (req, res) => {
       );
       data = data.replace(/\$OG_IMAGE/g, image_url);
 
-      data = data.replace(/\$REFRESH_CONTENT/g, `0;url=${redirect_url}`);
+      data = data.replace(/\$REFRESH_CONTENT/g, `5;url=${redirect_url}`);
 
       res.send(data);
       res.end();
