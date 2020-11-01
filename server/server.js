@@ -8,10 +8,6 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Home
-app.get("/", (req, res) => {
-  
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
-});
 
 // Weiterleitungsseite generieren
 app.get("/redirect/:id", async (req, res) => {
@@ -60,6 +56,11 @@ app.get("/redirect/:id", async (req, res) => {
       res.end();
     }
   );
+});
+
+app.get("/", (req, res) => {
+  
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 app.use(express.static(path.resolve(__dirname, "../build")));
