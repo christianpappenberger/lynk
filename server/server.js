@@ -9,7 +9,7 @@ const app = express();
 
 // Home
 app.get("/", (req, res) => {
-  
+  console.log(path.join(__dirname, "../build", "index.html"));
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
@@ -37,6 +37,11 @@ app.get("/redirect/:id", async (req, res) => {
         console.log(err);
         return res.status(500).send("Fehler!");
       }
+
+      data = data.replace(
+        '<div id="root"></div>',
+        '<div id="root"><p></p></div>'
+      );
 
       data = data.replace(/\$OG_TITLE/g, "...");
       data = data.replace(

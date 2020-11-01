@@ -93,6 +93,7 @@ class App extends Component {
         <title>Lynk - Add Preview Images to Links</title>
         <meta name="description" content="Free tool to easily create appealing links with an Open Graph Image and Title for sharing these on social media." />
         <meta name="keywords" content="link,shortener,preview,image,og,image,title,open,graph" />
+        <meta name="robots" content="noindex,nofollow" />
         </MetaTags>
         <div className="container">
           <header>
