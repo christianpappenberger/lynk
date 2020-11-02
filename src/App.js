@@ -176,7 +176,7 @@ class App extends Component {
 
           <div className="card col-md-6 mx-auto m-4" hidden={(this.state.new_entry_redirect_url == null) ? true : false}>
             <div className="card-body">
-              This is your new lynk: 
+              This is your new lynk:&nbsp;
               <span>{this.state.new_entry_redirect_url}</span>
               <br /><br />
               <button type="button" onClick={() => this.copyClipboard(this.state.new_entry_redirect_url)} className="btn btn-secondary btn-sm">
