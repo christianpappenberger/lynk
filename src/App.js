@@ -4,8 +4,6 @@ import "./App.css";
 import axios from "axios";
 import { MetaTags } from "react-meta-tags";
 
-var getTitleAtUrl = require('get-title-at-url');
-
 const BASE_URL = "https://lynk-app.herokuapp.com/";
 const UPLOAD_URL_CLOUDINARY =
   "https://api.cloudinary.com/v1_1/dewipehxt/upload";
@@ -27,6 +25,10 @@ class App extends Component {
       copied_success: null
     };
   }
+
+  handleTitleInput = (title) => {
+    this.setState({redirect_title: title});
+  };
 
   handleURLInput = (string) => {
     this.setState({ url: string });
@@ -50,12 +52,8 @@ class App extends Component {
       .then((res) => {
         this.setState({ uploaded_image_url: res.data.url });
 
-        getTitleAtUrl(this.state.url, (title) => {
-          this.setState({redirect_title: title});
-
-          // Der finale Request folgt jetzt
-          this.sendNewEntry();
-        });
+        // Der finale Request folgt jetzt
+        this.sendNewEntry();
       })
       .catch((err) => {
         alert("Das Bild konnte nicht hochgeladen werden.");
@@ -66,7 +64,8 @@ class App extends Component {
     const jsonString = {
       url: this.state.url,
       image_url: this.state.uploaded_image_url,
-      title: this.state.redirect_title
+      title: this.state.redirect_title,
+      redirect_count: 0
     };
 
     axios
@@ -108,7 +107,7 @@ class App extends Component {
             <p className="title">Lynk</p>
           </header>
           <p>
-            Just enter your lynk and we'll generate a new one which will have
+            Just enter your lynk with a title and we'll generate a new one which will have
             the image you provided as a preview.
           </p>
           <form
@@ -116,6 +115,18 @@ class App extends Component {
             onSubmit={(e) => this.handleSubmit(e)}
             action="POST"
           >
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                id="inputTitle"
+                name="inputTitle"
+                aria-describedby="title"
+                placeholder="Preview title"
+                required
+                onChange={(e) => this.handleTitleInput(e.target.value)}
+              />
+            </div>
             <div className="form-group">
               <input
                 type="url"
