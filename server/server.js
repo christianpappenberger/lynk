@@ -60,11 +60,11 @@ app.get("/redirect/:id", async (req, res) => {
       data = data.replace(/\$OG_TITLE/g, title);
       data = data.replace(
         /\$META_DESCRIPTION/g,
-        "Free tool to easily create appealing links with an Open Graph Image and Title for sharing these on social media."
+        ""
       );
       data = data.replace(
         /\$META_KEYWORDS/g,
-        "link,shortener,preview,image,og,image,title,open,graph"
+        ""
       );
       data = data.replace(/\$OG_IMAGE/g, image_url);
       data = data.replace(/\$OG_URL/g, redirect_url);
