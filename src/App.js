@@ -4,6 +4,8 @@ import "./App.css";
 import axios from "axios";
 import { MetaTags } from "react-meta-tags";
 
+var getTitleAtUrl = require('get-title-at-url');
+
 const BASE_URL = "https://lynk-app.herokuapp.com/";
 const UPLOAD_URL_CLOUDINARY =
   "https://api.cloudinary.com/v1_1/dewipehxt/upload";
@@ -18,6 +20,7 @@ class App extends Component {
     this.state = {
       url: null,
       image: null,
+      redirect_title: null,
       uploaded_image_url: null,
       new_entry_status: null,
       new_entry_redirect_url: null,
@@ -47,8 +50,12 @@ class App extends Component {
       .then((res) => {
         this.setState({ uploaded_image_url: res.data.url });
 
-        // Der finale Request folgt jetzt
-        this.sendNewEntry();
+        getTitleAtUrl(this.state.url, function(title){
+          this.setState({redirect_title: title});
+
+          // Der finale Request folgt jetzt
+          this.sendNewEntry();
+        });
       })
       .catch((err) => {
         alert("Das Bild konnte nicht hochgeladen werden.");
@@ -59,6 +66,7 @@ class App extends Component {
     const jsonString = {
       url: this.state.url,
       image_url: this.state.uploaded_image_url,
+      title: this.state.redirect_title
     };
 
     axios
