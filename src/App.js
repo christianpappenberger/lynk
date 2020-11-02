@@ -50,7 +50,7 @@ class App extends Component {
       .then((res) => {
         this.setState({ uploaded_image_url: res.data.url });
 
-        getTitleAtUrl(this.state.url, function(title){
+        getTitleAtUrl(this.state.url, (title) => {
           this.setState({redirect_title: title});
 
           // Der finale Request folgt jetzt
@@ -178,7 +178,7 @@ class App extends Component {
 
         <footer className="footer">
           <img src="https://www.adweko.com/site/assets/files/1/adweko_logo_produkts.svg" style={{ width: 100 }} alt="Logo" />
-          <div className="container">ADWEKO 2020 - Christian Pappenberger</div>
+          <div className="container">ADWEKO 2020 - Maximilian Hauck / Christian Pappenberger</div>
         </footer>
       </React.Fragment>
     );
