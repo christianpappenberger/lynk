@@ -7,7 +7,7 @@ import { MetaTags } from "react-meta-tags";
 const BASE_URL = "https://lynk-app.herokuapp.com/";
 const UPLOAD_URL_CLOUDINARY =
   "https://api.cloudinary.com/v1_1/dewipehxt/upload";
-const UPLOAD_URL_JSONBOX = "https://jsonbox.io/box_13933b959897187a4c39";
+const UPLOAD_URL_JSONBOX = "https://jsonbox.io/box_cab91e956884ac790a1e";
 
 class App extends Component {
 

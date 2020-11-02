@@ -12,7 +12,7 @@ const app = express();
 // Weiterleitungsseite generieren
 app.get("/redirect/:id", async (req, res) => {
   const id = req.params.id;
-  const endpoint = "https://jsonbox.io/box_13933b959897187a4c39/";
+  const endpoint = "https://jsonbox.io/box_cab91e956884ac790a1e/";
   var redirect_url = null;
   var image_url = null;
 
@@ -34,7 +34,7 @@ app.get("/redirect/:id", async (req, res) => {
         return res.status(500).send("Fehler!");
       }
 
-      data = data.replace(/\$OG_TITLE/g, "...");
+      data = data.replace(/\$OG_TITLE/g, "Titel");
       data = data.replace(
         /\$META_DESCRIPTION/g,
         "Free tool to easily create appealing links with an Open Graph Image and Title for sharing these on social media."
@@ -44,7 +44,7 @@ app.get("/redirect/:id", async (req, res) => {
         "link,shortener,preview,image,og,image,title,open,graph"
       );
       data = data.replace(/\$OG_IMAGE/g, image_url);
-
+      data = data.replace(/\$OG_URL/g, "https://www.test.com");
       data = data.replace(/\$REFRESH_CONTENT/g, `0;url=${redirect_url}`);
 
       res.send(data);
