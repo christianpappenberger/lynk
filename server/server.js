@@ -89,6 +89,18 @@ app.get("/redirect/:id/counter", (req, res) => {
 
 });
 
+// Count für Link zurückgeben
+app.get("/stats", (req, res) => {
+  
+  axios.get(endpoint).then((response) => {
+    res.send(`There are ${response.data.length} items in the box.`);
+    
+  }).catch((err) => {
+    console.log(err);
+  });
+
+});
+
 // Home
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
