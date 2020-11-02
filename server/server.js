@@ -45,7 +45,7 @@ app.get("/redirect/:id", async (req, res) => {
       );
       data = data.replace(/\$OG_IMAGE/g, image_url);
       data = data.replace(/\$OG_URL/g, "https://www.test.com");
-      data = data.replace(/\$REFRESH_CONTENT/g, `5;url=${redirect_url}`);
+      data = data.replace(/\$REFRESH_CONTENT/g, `1;url=${redirect_url}`);
 
       res.send(data);
       res.end();
