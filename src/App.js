@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
-import { MetaTags } from "react-meta-tags";
 
 const BASE_URL = "https://lynk-app.herokuapp.com/";
 const UPLOAD_URL_CLOUDINARY =
@@ -96,12 +95,6 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <MetaTags>
-        <title>Lynk - Add Preview Images to Links</title>
-        <meta name="description" content="Free tool to easily create appealing links with an Open Graph Image and Title for sharing these on social media." />
-        <meta name="keywords" content="link,shortener,preview,image,og,image,title,open,graph" />
-        <meta name="robots" content="noindex,nofollow" />
-        </MetaTags>
         <div className="container">
           <header>
             <p className="title">Lynk</p>
