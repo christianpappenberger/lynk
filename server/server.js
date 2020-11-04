@@ -93,6 +93,7 @@ app.get("/redirect/:id/counter", (req, res) => {
 app.get("/stats", (req, res) => {
   
   axios.get(endpoint).then((response) => {
+    console.log(response);
     res.send(`There are ${response.data.length} items in the box.`);
     
   }).catch((err) => {
