@@ -92,8 +92,7 @@ app.get("/redirect/:id/counter", (req, res) => {
 // Count für Link zurückgeben
 app.get("/stats", (req, res) => {
   
-  axios.get(endpoint).then((response) => {
-    console.log(response);
+  axios.get(endpoint + "?limit=1000").then((response) => {
     res.send(`There are ${response.data.length} items in the box.`);
     
   }).catch((err) => {
